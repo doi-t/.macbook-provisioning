@@ -1,0 +1,142 @@
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  sudo: no
+  vars:
+    colon: ':'
+    homebrew_taps:
+      - homebrew/binary
+      - homebrew/dupes
+      - caskroom/cask
+      - sanemat/font
+    homebrew_packages:
+      - { name: readline }
+      - { name: openssl }
+      - { name: openssl, state: linked, install_options: force }
+      - { name: python }
+      - { name: ansible }
+      - { name: coreutils }
+      - { name: vim }
+      - { name: git }
+      - { name: zsh, install_options: disable-etcdir }
+      - { name: wget }
+      - { name: curl }
+      - { name: cmake }
+      - { name: autoconf }
+      - { name: automake }
+      - { name: pkg-config }
+      - { name: ctags }
+      - { name: tree }
+      - { name: lv }
+      - { name: nkf }
+      - { name: go }
+      - { name: direnv }
+      - { name: peco }
+      - { name: rbenv }
+      - { name: ruby-build }
+      - { name: w3m }
+      - { name: tmux }
+      - { name: redis }
+      - { name: nginx }
+      - { name: source-highlight }
+      - { name: jq }
+      - { name: hub }
+      - { name: tig }
+    homebrew_cask_packages:
+      - { name: google-chrome }
+      - { name: google-japanese-ime }
+      - { name: vagrant }
+      - { name: virtualbox }
+      - { name: skype }
+      - { name: slack }
+      - { name: iterm2 }
+      - { name: adobe-reader }
+      - { name: java }
+
+  pre_tasks:
+    - shell: echo 'mackbook provisioning!'
+  tasks:
+    - name: add tap repositories
+      homebrew_tap: tap={{ item }} state=present
+      with_items: homebrew_taps
+
+    - name: update homebrew
+      homebrew: update_homebrew=yes
+
+    # brew
+    - name: install brew packages
+      homebrew: >
+        name={{ item.name }}
+        state={{ item.state | default('latest') }}
+        install_options={{
+          item.install_options | default() | join(',')
+          if item.install_options is not string
+          else item.install_options
+        }}
+      with_items: homebrew_packages
+      register: brew_result
+    - name: make directory for information of brew packages
+      file: path=brew_info state=directory
+    - name: save information of brew packages
+      shell: brew info {{ item }} > brew_info/{{ item }}
+      with_items: brew_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list
+
+    # cask
+    - name: install homebrew-cask
+      homebrew: name=brew-cask state=latest
+    - name: install cask packages
+      homebrew_cask: name={{ item.name }} state={{ item.state|default('installed') }}
+      with_items: homebrew_cask_packages
+      register: cask_result
+    - name: make directory for information of cask packages
+      file: path=cask_info state=directory
+    - name: save information of cask packages
+      shell: brew cask info {{ item }} > cask_info/{{ item }}
+      with_items: cask_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list
+
+    # tab completion for Mac OS X terminal
+    - name: setup tab completion
+      shell: cat './inputrc.txt' >> ~/.inputrc
+      args:
+        creates: ~/.inputrc
+
+    # oh-my-zsh
+    - name: install oh-my-zsh
+      shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+      args:
+        creates: ~/.oh-my-zsh/
+      notify: setup zsh
+
+    # spf13-vim
+    - name: spf13-vim install
+      shell: curl http://j.mp/spf13-vim3 -L -o - | sh
+      args:
+        creates: ~/.spf13-vim-3/
+
+    # pythonz
+    - name: install pythonz
+      shell: curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
+      args:
+        creates: ~/.pythonz/
+      notify: setup zshrc for pythonz
+
+    # Ricty
+    - name: install xquartz for Ricty
+      homebrew_cask: name=xquartz
+    - name: install fontforge for Ricty
+      homebrew: name=fontforge
+    - name: install Ricty
+      homebrew: name=ricty
+    - name: copy ttf files
+      shell: cp -f $(brew --cellar ricty)/*/share/fonts/Ricty*.ttf ~/Library/Fonts/
+      args:
+        creates: ~/Library/Fonts/Ricty-Bold.ttf
+      notify: run fc-cache
+
+  handlers:
+    - name: run fc-cache
+      shell: fc-cache -vf
+    - name: setup zsh
+      script: ./setup_zsh.sh
+    - name: setup zshrc for pythonz
+      shell: cat './pythonz.txt' >> ~/.zshrc
