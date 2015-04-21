@@ -1,6 +1,6 @@
 # Macbook Provisioning
 
-wth ansible
+with ansible
 
 ## provisioning
 
