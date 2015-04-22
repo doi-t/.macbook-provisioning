@@ -10,6 +10,7 @@
       - caskroom/cask
       - sanemat/font
     homebrew_packages:
+      - { name: gcc }
       - { name: readline }
       - { name: openssl }
       - { name: openssl, state: linked, install_options: force }
