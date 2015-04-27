@@ -113,12 +113,17 @@
       args:
         creates: ~/.spf13-vim-3/
 
+    # solarized dircolor for ls
+    - name: setup solarized dircolor
+      shell: curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark > ~/.dircolors-solarized
+      args:
+        creates: ~/.dircolors-solarized
+
     # pythonz
     - name: install pythonz
       shell: curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
       args:
         creates: ~/.pythonz/
-      notify: setup zshrc for pythonz
 
     # Ricty
     - name: install xquartz for Ricty
@@ -138,5 +143,3 @@
       shell: fc-cache -vf
     - name: setup zsh
       script: ./setup_zsh.sh
-    - name: setup zshrc for pythonz
-      shell: cat './pythonz.txt' >> ~/.zshrc

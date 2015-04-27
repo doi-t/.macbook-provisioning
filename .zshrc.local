@@ -1,2 +1,5 @@
+# direnv
+export EDITOR=vim
+eval "$(direnv hook zsh)"
 # pythonz
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
