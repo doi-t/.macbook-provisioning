@@ -120,6 +120,12 @@
       args:
         creates: ~/.dircolors-solarized
 
+    # tmux
+    - name: setup tmux.conf
+      shell: cp ./.tmux.conf ~/.tmux.conf
+      args:
+        creates: ~/.tmux.conf
+
     # pythonz
     - name: install pythonz
       shell: curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
