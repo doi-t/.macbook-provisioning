@@ -11,6 +11,7 @@
       - sanemat/font
     homebrew_packages:
       - { name: gcc }
+      - { name: apple-gcc42 }
       - { name: readline }
       - { name: openssl }
       - { name: openssl, state: linked, install_options: force }
@@ -34,6 +35,8 @@
       - { name: direnv }
       - { name: peco }
       - { name: rbenv }
+      - { name: rbenv-gemset }
+      - { name: rbenv-gem-rehash }
       - { name: ruby-build }
       - { name: w3m }
       - { name: tmux }
