@@ -108,11 +108,23 @@
         creates: ~/.oh-my-zsh/
       notify: setup zsh
 
+    # replace .zshrc.local file
+    - name: replace zshrc.local file
+      shell: cp ./.zshrc.local ~/.zshrc.local
+
+    # replace .zshrc.mac file
+    - name: replace zshrc.mac file
+      shell: cp ./.zshrc.mac ~/.zshrc.mac
+
     # spf13-vim
     - name: spf13-vim install
       shell: curl http://j.mp/spf13-vim3 -L -o - | sh
       args:
         creates: ~/.spf13-vim-3/
+
+    # replace .vimrc.bundles.local
+    - name: replace .vimrc.bundles.local
+      shell: cp ./.vimrc.bundles.local ~/.vimrc.bundles.local
 
     # solarized dircolor for ls
     - name: setup solarized dircolor
