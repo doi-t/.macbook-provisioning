@@ -50,6 +50,7 @@
       - { name: google-chrome }
       - { name: google-japanese-ime }
       - { name: vagrant }
+      - { name: chefdk }
       - { name: virtualbox }
       - { name: skype }
       - { name: slack }
