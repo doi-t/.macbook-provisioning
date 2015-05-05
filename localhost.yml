@@ -116,10 +116,6 @@
     - name: replace zshrc.local file
       shell: cp ./.zshrc.local ~/.zshrc.local
 
-    # replace .zshrc.mac file
-    - name: replace zshrc.mac file
-      shell: cp ./.zshrc.mac ~/.zshrc.mac
-
     # spf13-vim
     - name: spf13-vim install
       shell: curl http://j.mp/spf13-vim3 -L -o - | sh

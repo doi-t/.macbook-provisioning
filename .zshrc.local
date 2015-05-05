@@ -1,5 +1,15 @@
+# dircolors
+eval "$(gdircolors ~/.dircolors-solarized)"
+alias 'ls=gls --color=auto'
 # direnv
 export EDITOR=vim
 eval "$(direnv hook zsh)"
 # pythonz
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then
+    eval "$(rbenv init -)"
+fi
+# chefdk
+eval "$(chef shell-init zsh)"
