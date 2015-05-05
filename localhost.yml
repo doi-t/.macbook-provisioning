@@ -113,8 +113,8 @@
       notify: setup zsh
 
     # replace .zshrc.local file
-    - name: replace zshrc.local file
-      shell: cp ./.zshrc.local ~/.zshrc.local
+    - name: replace .zshrc.local file
+      shell: cp ./dotzshrc.local ~/.zshrc.local
 
     # spf13-vim
     - name: spf13-vim install
