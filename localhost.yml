@@ -46,6 +46,7 @@
       - { name: jq }
       - { name: hub }
       - { name: tig }
+      - { name: jenkins }
     homebrew_cask_packages:
       - { name: google-chrome }
       - { name: google-japanese-ime }
