@@ -124,7 +124,7 @@
 
     # replace .vimrc.bundles.local
     - name: replace .vimrc.bundles.local
-      shell: cp ./.vimrc.bundles.local ~/.vimrc.bundles.local
+      shell: cp ./dotvimrc.bundles.local ~/.vimrc.bundles.local
 
     # solarized dircolor for ls
     - name: setup solarized dircolor
@@ -133,8 +133,8 @@
         creates: ~/.dircolors-solarized
 
     # tmux
-    - name: setup tmux.conf
-      shell: cp ./.tmux.conf ~/.tmux.conf
+    - name: replace .tmux.conf
+      shell: cp ./dottmux.conf ~/.tmux.conf
       args:
         creates: ~/.tmux.conf
 
