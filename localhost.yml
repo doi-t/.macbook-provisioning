@@ -116,6 +116,14 @@
     - name: replace .zshrc.local file
       shell: cp ./dotzshrc.local ~/.zshrc.local
 
+    # vagrant plugin install
+    - name: vagrant plugin install
+      shell: vagrant plugin install sahara vagrant-cachier vagrant-exec vagrant-proxyconf vagrant-vbguest
+
+    # replace the global Vagrantfile
+    - name: replace the global Vagrantfile
+      shell: cp Vagrantfile ~/.vagrant.d/Vagrantfile
+
     # spf13-vim
     - name: spf13-vim install
       shell: curl http://j.mp/spf13-vim3 -L -o - | sh
