@@ -38,6 +38,7 @@
       - { name: rbenv-gemset }
       - { name: rbenv-gem-rehash }
       - { name: ruby-build }
+      - { name: rbenv }
       - { name: w3m }
       - { name: tmux }
       - { name: redis }
@@ -119,7 +120,7 @@
 
     # vagrant plugin install
     - name: vagrant plugin install
-      shell: vagrant plugin install sahara vagrant-cachier vagrant-exec vagrant-proxyconf vagrant-vbguest
+    shell: vagrant plugin install sahara vagrant-cachier vagrant-exec vagrant-proxyconf vagrant-vbguest vagrant-omnibus
 
     # replace the global Vagrantfile
     - name: replace the global Vagrantfile
