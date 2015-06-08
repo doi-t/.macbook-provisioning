@@ -31,6 +31,7 @@
       - { name: tree }
       - { name: lv }
       - { name: nkf }
+      - { name: htop }
       - { name: go }
       - { name: direnv }
       - { name: peco }
@@ -40,6 +41,7 @@
       - { name: ruby-build }
       - { name: rbenv }
       - { name: w3m }
+      - { name: screen }
       - { name: tmux }
       - { name: redis }
       - { name: nginx }
@@ -117,10 +119,6 @@
     # replace .zshrc.local file
     - name: replace .zshrc.local file
       shell: cp ./dotzshrc.local ~/.zshrc.local
-
-    # vagrant plugin install
-    - name: vagrant plugin install
-    shell: vagrant plugin install sahara vagrant-cachier vagrant-exec vagrant-proxyconf vagrant-vbguest vagrant-omnibus
 
     # replace the global Vagrantfile
     - name: replace the global Vagrantfile
