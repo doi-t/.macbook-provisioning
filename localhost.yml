@@ -61,6 +61,7 @@
       - { name: iterm2 }
       - { name: adobe-reader }
       - { name: java }
+      - { name: dropbox }
 
   pre_tasks:
     - shell: echo 'mackbook provisioning!'
