@@ -1,4 +1,5 @@
 Bundle 'vim-scripts/DoxygenToolkit.vim'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'ryuzee/neocomplcache_php_selenium_snippet'
+Bundle 'hashivim/vim-terraform.git'
 let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet_chef_recipe_snippet/autoload/neosnippet/snippets'

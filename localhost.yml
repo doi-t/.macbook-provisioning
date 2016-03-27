@@ -29,6 +29,7 @@
       - { name: pkg-config }
       - { name: ctags }
       - { name: tree }
+      - { name: watch }
       - { name: lv }
       - { name: nkf }
       - { name: htop }
@@ -40,6 +41,9 @@
       - { name: rbenv-gem-rehash }
       - { name: ruby-build }
       - { name: rbenv }
+      - { name: libxml2 }
+      - { name: libxslt }
+      - { name: libiconv }
       - { name: w3m }
       - { name: screen }
       - { name: tmux }
@@ -54,6 +58,7 @@
       - { name: google-chrome }
       - { name: google-japanese-ime }
       - { name: vagrant }
+      - { name: terraform }
       - { name: chefdk }
       - { name: virtualbox }
       - { name: skype }
