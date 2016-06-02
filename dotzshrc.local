@@ -1,3 +1,6 @@
+# zsh-completions
+plugins+=(zsh-completions)
+autoload -U compinit && compinit
 # brew cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # dircolors
@@ -14,4 +17,6 @@ if which rbenv > /dev/null; then
     eval "$(rbenv init -)"
 fi
 # chefdk
-# eval "$(chef shell-init zsh)"
+eval "$(chef shell-init zsh)"
+# aws
+source /usr/local/bin/aws_zsh_completer.sh
