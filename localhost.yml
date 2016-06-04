@@ -172,6 +172,16 @@
         creates: ~/Library/Fonts/Ricty-Bold.ttf
       notify: run fc-cache
 
+    # terraform
+    - name: install zsh-completion for terraform
+      shell: curl https://raw.githubusercontent.com/hashicorp/terraform/master/contrib/zsh-completion/_terraform -o /usr/local/share/zsh/site-functions/_terraform
+      args:
+        creates: /usr/local/share/zsh/site-functions/_terraform
+    - name: install zsh-completion for terraform
+      shell: curl https://raw.githubusercontent.com/dtan4/terraforming/master/contrib/zsh-completion/_terraforming -o /usr/local/share/zsh/site-functions/_terraforming
+      args:
+        creates: /usr/local/share/zsh/site-functions/_terraforming
+
   handlers:
     - name: run fc-cache
       shell: fc-cache -vf
