@@ -1,3 +1,5 @@
+# alias
+alias vi=vim
 # zsh-completions
 plugins+=(zsh-completions)
 autoload -U compinit && compinit
@@ -20,3 +22,6 @@ fi
 eval "$(chef shell-init zsh)"
 # aws
 source /usr/local/bin/aws_zsh_completer.sh
+# go
+export GOPATH=${HOME}/go
+export PATH=$PATH:$GOPATH/bin
