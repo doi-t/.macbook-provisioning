@@ -101,8 +101,6 @@
       with_items: "{{brew_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list}}"
 
     # cask
-    - name: install homebrew-cask
-      homebrew: name=brew-cask state=latest
     - name: install cask packages
       homebrew_cask: name={{ item.name }} state={{ item.state|default('installed') }}
       with_items: '{{homebrew_cask_packages}}'
