@@ -5,6 +5,7 @@ alias git=/usr/local/bin/git
 plugins+=(zsh-completions)
 autoload -U compinit && compinit
 # brew cask
+export HOMEBREW_VERBOSE=1
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # dircolors
 eval "$(gdircolors ~/.dircolors-solarized)"
