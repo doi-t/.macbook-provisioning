@@ -33,9 +33,11 @@
       - { name: lv }
       - { name: nkf }
       - { name: htop }
-      - { name: go }
       - { name: direnv }
+      - { name: go }
+      - { name: ghq }
       - { name: peco }
+      - { name: glide }
       - { name: rbenv }
       - { name: rbenv-gemset }
       - { name: ruby-build }
