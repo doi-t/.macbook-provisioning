@@ -61,6 +61,8 @@
       - { name: vault }
       - { name: nomad }
       - { name: otto }
+      - { name: kops }
+      - { name: python3 }
     homebrew_cask_packages:
       - { name: google-chrome }
       - { name: google-japanese-ime }
@@ -73,6 +75,7 @@
       - { name: adobe-reader }
       - { name: java }
       - { name: dropbox }
+      - { name: minikube }
 
   pre_tasks:
     - shell: echo 'mackbook provisioning!'
@@ -158,6 +161,14 @@
       shell: cp ./dottmux.conf ~/.tmux.conf
       args:
         creates: ~/.tmux.conf
+
+    # pip
+    - name: install get-pip.py
+      shell: curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
+      notify: install pip
+
+    - name: isntall pip
+      shell: python /tmp/get-pip.py
 
     # pythonz
     - name: install pythonz

@@ -13,7 +13,11 @@ alias 'ls=gls --color=auto'
 # direnv
 export EDITOR=vim
 eval "$(direnv hook zsh)"
+# python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 # pythonz
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -27,3 +31,9 @@ source /usr/local/bin/aws_zsh_completer.sh
 # go
 export GOPATH=${HOME}/go
 export PATH=$PATH:$GOPATH/bin
+# kubernetes
+source /usr/local/bin/google-cloud-sdk/completion.zsh.inc
+source /usr/local/bin/google-cloud-sdk/path.zsh.inc
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi
