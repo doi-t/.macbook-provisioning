@@ -1,10 +1,5 @@
 # Macbook Provisioning
 
-with ansible
-
-## provisioning
-
-`HOMEBREW_CASK_OPTS="--appdir=/Applications" ansible-playbook -i hosts -vv localhost.yml`
-
-## reference
-http://t-wada.hatenablog.jp/entry/mac-provisioning-by-ansible
+```bash
+ansible-playbook -i hosts -vv localhost.yml
+```

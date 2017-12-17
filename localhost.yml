@@ -115,7 +115,6 @@
     - name: save information of cask packages
       shell: brew cask info {{ item }} > cask_info/{{ item }}
       with_items: "{{cask_result.results | selectattr('changed') | map(attribute='item') | map(attribute='name') | list}}"
-
     # tab completion for Mac OS X terminal
     - name: setup tab completion
       shell: cat './inputrc.txt' >> ~/.inputrc
@@ -124,7 +123,7 @@
 
     # oh-my-zsh
     - name: install oh-my-zsh
-      shell: curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+      shell: curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
       args:
         creates: ~/.oh-my-zsh/
       notify: install zsh-completions
@@ -142,15 +141,12 @@
 
     # neovim
     - name: install dein
-      shell: curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s ~/.config/nvim/dein
+      shell: curl -sL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s ~/.config/nvim/dein
       notify: install nvim/init.vim
-
-    - name: install nvim/init.vim
-      shell: cp ./nvim/init.vim ~/.config/nvim/init.vim
 
     # solarized dircolor for ls
     - name: setup solarized dircolor
-      shell: curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark > ~/.dircolors-solarized
+      shell: curl -sL https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark > ~/.dircolors-solarized
       args:
         creates: ~/.dircolors-solarized
 
@@ -162,15 +158,12 @@
 
     # pip
     - name: install get-pip.py
-      shell: curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
+      shell: curl -sL https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
       notify: install pip
-
-    - name: isntall pip
-      shell: python /tmp/get-pip.py
 
     # pythonz
     - name: install pythonz
-      shell: curl -kL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
+      shell: curl -skL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
       args:
         creates: ~/.pythonz/
 
@@ -202,3 +195,7 @@
       shell: fc-cache -vf
     - name: setup zsh
       script: ./setup_zsh.sh
+    - name: install nvim/init.vim
+      shell: cp ./nvim/init.vim ~/.config/nvim/init.vim
+    - name: install pip
+      shell: python /tmp/get-pip.py
