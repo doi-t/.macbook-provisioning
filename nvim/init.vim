@@ -21,6 +21,10 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('w0rp/ale')
   call dein#add('jmcantrell/vim-virtualenv')
   call dein#add('bfredl/nvim-miniyank')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('Yggdroot/indentLine')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
 
   if dein#check_install()
     call dein#install()
@@ -44,8 +48,6 @@ set ignorecase
 set smartcase
 set list
 set history=1000
-set ruler
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 silent !mkdir ~/.config/nvim/backups > /dev/null 2>&1
 
 set autoindent
@@ -65,7 +67,7 @@ set background=dark
 colorscheme solarized
 
 "
-" deoplete.vim
+" deoplete.nvim
 "
 let g:deoplete#enable_at_startup = 1
 
