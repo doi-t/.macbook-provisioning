@@ -20,6 +20,7 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('fatih/vim-go')
   call dein#add('w0rp/ale')
   call dein#add('jmcantrell/vim-virtualenv')
+  call dein#add('bfredl/nvim-miniyank')
 
   if dein#check_install()
     call dein#install()
@@ -112,3 +113,10 @@ autocmd BufReadPost *
   \ if line("'\"") > 1 && line ("'\"") <= line("$") |
   \   exe "normal! g'\"" |
   \ endif
+
+"
+" Workaround of X11 clipboard for neovim. See https://github.com/neovim/neovim/issues/1822#issuecomment-233152833
+"
+set clipboard=unnamed
+map p <Plug>(miniyank-autoput)
+map P <Plug>(miniyank-autoPut)
