@@ -14,6 +14,12 @@ vagrant plugin install sahara vagrant-cachier vagrant-exec vagrant-proxyconf vag
 pip install awscli
 pip install virtualenv
 
+# neovim
+pip2 install --upgrade neovim
+pip3 install --upgrade neovim
+gem install neovim
+pip install mypy yamllint autopep8 yapf
+
 # terminal
 echo 'setup iTerm2 Color Presets: https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized'
 echo 'choose Ricty in iTerm2 preferences: Performances > Profiles > Text'

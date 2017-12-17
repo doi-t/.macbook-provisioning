@@ -18,7 +18,7 @@
       - { name: ansible }
       - { name: coreutils }
       - { name: lua }
-      - { name: vim }
+      - { name: neovim }
       - { name: git }
       - { name: zsh, install_options: --without-etcdir }
       - { name: wget }
@@ -140,15 +140,13 @@
     - name: replace .zshrc.local file
       shell: cp ./dotzshrc.local ~/.zshrc.local
 
-    # spf13-vim
-    - name: spf13-vim install
-      shell: curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
-      args:
-        creates: ~/.spf13-vim-3/
+    # neovim
+    - name: install dein
+      shell: curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s ~/.config/nvim/dein
+      notify: install nvim/init.vim
 
-    # replace .vimrc.bundles.local
-    - name: replace .vimrc.bundles.local
-      shell: cp ./dotvimrc.bundles.local ~/.vimrc.bundles.local
+    - name: install nvim/init.vim
+      shell: cp ./nvim/init.vim ~/.config/nvim/init.vim
 
     # solarized dircolor for ls
     - name: setup solarized dircolor
