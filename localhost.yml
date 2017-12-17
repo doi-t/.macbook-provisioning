@@ -1,7 +1,8 @@
+---
 - hosts: localhost
   connection: local
-  gather_facts: no
-  become: no
+  gather_facts: 'no'
+  become: 'no'
   vars:
     colon: ':'
     homebrew_taps:
@@ -10,72 +11,72 @@
       - caskroom/cask
       - sanemat/font
     homebrew_packages:
-      - { name: gcc }
-      - { name: readline }
-      - { name: openssl }
-      - { name: openssl, state: linked, install_options: force }
-      - { name: python }
-      - { name: ansible }
-      - { name: coreutils }
-      - { name: lua }
-      - { name: neovim }
-      - { name: git }
-      - { name: zsh, install_options: --without-etcdir }
-      - { name: wget }
-      - { name: curl }
-      - { name: cmake }
-      - { name: autoconf }
-      - { name: automake }
-      - { name: pkg-config }
-      - { name: ctags }
-      - { name: tree }
-      - { name: watch }
-      - { name: lv }
-      - { name: nkf }
-      - { name: htop }
-      - { name: direnv }
-      - { name: go }
-      - { name: ghq }
-      - { name: peco }
-      - { name: glide }
-      - { name: rbenv }
-      - { name: rbenv-gemset }
-      - { name: ruby-build }
-      - { name: libxml2 }
-      - { name: libxslt }
-      - { name: libiconv }
-      - { name: w3m }
-      - { name: screen }
-      - { name: tmux }
-      - { name: redis }
-      - { name: nginx }
-      - { name: source-highlight }
-      - { name: jq }
-      - { name: hub }
-      - { name: tig }
-      - { name: jenkins }
-      - { name: packer }
-      - { name: serf }
-      - { name: consul }
-      - { name: terraform }
-      - { name: vault }
-      - { name: nomad }
-      - { name: otto }
-      - { name: kops }
-      - { name: python3 }
+      - {name: gcc}
+      - {name: readline}
+      - {name: openssl}
+      - {name: openssl, state: linked, install_options: force}
+      - {name: python}
+      - {name: ansible}
+      - {name: coreutils}
+      - {name: lua}
+      - {name: neovim}
+      - {name: git}
+      - {name: zsh, install_options: --without-etcdir}
+      - {name: wget}
+      - {name: curl}
+      - {name: cmake}
+      - {name: autoconf}
+      - {name: automake}
+      - {name: pkg-config}
+      - {name: ctags}
+      - {name: tree}
+      - {name: watch}
+      - {name: lv}
+      - {name: nkf}
+      - {name: htop}
+      - {name: direnv}
+      - {name: go}
+      - {name: ghq}
+      - {name: peco}
+      - {name: glide}
+      - {name: rbenv}
+      - {name: rbenv-gemset}
+      - {name: ruby-build}
+      - {name: libxml2}
+      - {name: libxslt}
+      - {name: libiconv}
+      - {name: w3m}
+      - {name: screen}
+      - {name: tmux}
+      - {name: redis}
+      - {name: nginx}
+      - {name: source-highlight}
+      - {name: jq}
+      - {name: hub}
+      - {name: tig}
+      - {name: jenkins}
+      - {name: packer}
+      - {name: serf}
+      - {name: consul}
+      - {name: terraform}
+      - {name: vault}
+      - {name: nomad}
+      - {name: otto}
+      - {name: kops}
+      - {name: python3}
     homebrew_cask_packages:
-      - { name: google-chrome }
-      - { name: google-japanese-ime }
-      - { name: vagrant }
-      - { name: chefdk }
-      - { name: virtualbox }
-      - { name: skype }
-      - { name: slack }
-      - { name: iterm2 }
-      - { name: adobe-reader }
-      - { name: java }
-      - { name: dropbox }
-      - { name: minikube }
+      - {name: google-chrome}
+      - {name: google-japanese-ime}
+      - {name: vagrant}
+      - {name: chefdk}
+      - {name: virtualbox}
+      - {name: skype}
+      - {name: slack}
+      - {name: iterm2}
+      - {name: adobe-reader}
+      - {name: java}
+      - {name: dropbox}
+      - {name: minikube}
 
   pre_tasks:
     - shell: echo 'mackbook provisioning!'
