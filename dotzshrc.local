@@ -1,5 +1,5 @@
 # alias
-alias vi=vim
+alias vi=nvim
 alias git=/usr/local/bin/git
 # zsh-completions
 plugins+=(zsh-completions)
@@ -11,7 +11,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 eval "$(gdircolors ~/.dircolors-solarized)"
 alias 'ls=gls --color=auto'
 # direnv
-export EDITOR=vim
+export EDITOR=nvim
 eval "$(direnv hook zsh)"
 # python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
