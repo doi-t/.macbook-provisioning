@@ -81,6 +81,7 @@
   pre_tasks:
     - shell: echo 'mackbook provisioning!'
   tasks:
+    # update homebrew
     - name: add tap repositories
       homebrew_tap: tap={{ item }} state=present
       with_items: '{{homebrew_taps}}'
@@ -146,20 +147,20 @@
       notify: install nvim/init.vim
 
     # solarized dircolor for ls
-    - name: setup solarized dircolor
-      shell: curl -sL https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark > ~/.dircolors-solarized
-      args:
-        creates: ~/.dircolors-solarized
+    - name: install solarized dircolor
+      get_url:
+        url: https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
+        dest: ~/.dircolors-solarized
 
     # tmux
     - name: replace .tmux.conf
       shell: cp ./dottmux.conf ~/.tmux.conf
-      args:
-        creates: ~/.tmux.conf
 
     # pip
     - name: install get-pip.py
-      shell: curl -sL https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
+      get_url:
+        url: https://bootstrap.pypa.io/get-pip.py
+        dest: /tmp/get-pip.py
       notify: install pip
 
     # pythonz
@@ -183,13 +184,13 @@
 
     # terraform
     - name: install zsh-completion for terraform
-      shell: curl https://raw.githubusercontent.com/hashicorp/terraform/master/contrib/zsh-completion/_terraform -o /usr/local/share/zsh/site-functions/_terraform
-      args:
-        creates: /usr/local/share/zsh/site-functions/_terraform
+      get_url:
+        url: https://raw.githubusercontent.com/hashicorp/terraform/master/contrib/zsh-completion/_terraform
+        dest: /usr/local/share/zsh/site-functions/_terraform
     - name: install zsh-completion for terraform
-      shell: curl https://raw.githubusercontent.com/dtan4/terraforming/master/contrib/zsh-completion/_terraforming -o /usr/local/share/zsh/site-functions/_terraforming
-      args:
-        creates: /usr/local/share/zsh/site-functions/_terraforming
+      get_url:
+        url: https://raw.githubusercontent.com/dtan4/terraforming/master/contrib/zsh-completion/_terraforming
+        dest: /usr/local/share/zsh/site-functions/_terraforming
 
   handlers:
     - name: run fc-cache
