@@ -25,6 +25,7 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('Yggdroot/indentLine')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('tpope/vim-rhubarb')
 
   if dein#check_install()
     call dein#install()
