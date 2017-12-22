@@ -158,9 +158,7 @@
 
     # pip
     - name: install get-pip.py
-      get_url:
-        url: https://bootstrap.pypa.io/get-pip.py
-        dest: /tmp/get-pip.py
+      shell: wget --quiet https://bootstrap.pypa.io/get-pip.py -O /tmp/get-pip.py
       notify: install pip
 
     # pythonz
