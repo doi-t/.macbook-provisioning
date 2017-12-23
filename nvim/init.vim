@@ -53,6 +53,7 @@ set history=1000
 silent !mkdir ~/.config/nvim/backups > /dev/null 2>&1
 
 set autoindent
+set expandtab
 set tabstop=4
 set shiftwidth=4
 
