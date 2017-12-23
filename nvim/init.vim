@@ -75,6 +75,11 @@ colorscheme solarized
 let g:deoplete#enable_at_startup = 1
 
 "
+" indentLine
+"
+autocmd Filetype json let g:indentLine_enabled = 0 " Ref. https://github.com/Yggdroot/indentLine/issues/172
+
+"
 " vim-terraform
 "
 let g:terraform_align=1
