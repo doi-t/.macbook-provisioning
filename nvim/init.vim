@@ -103,7 +103,7 @@ let g:ale_linters = {
  \  'vim': ['vint']
 \}
 let g:ale_fixers = {
-\ 'python':     ['remove_trailing_lines', 'trim_whitespace', 'add_blank_lines_for_python_control_statements', 'autopep8', 'isort', 'yapf'],
+\ 'python':     ['remove_trailing_lines', 'trim_whitespace', 'add_blank_lines_for_python_control_statements', 'autopep8', 'isort'],
 \ 'bash':       ['remove_trailing_lines', 'trim_whitespace'],
 \ 'docker':     ['remove_trailing_lines', 'trim_whitespace'],
 \ 'html':       ['remove_trailing_lines', 'trim_whitespace'],
@@ -115,6 +115,7 @@ let g:ale_fixers = {
 \ 'vim':        ['remove_trailing_lines', 'trim_whitespace'],
 \}
 let g:ale_python_mypy_options = '--ignore-missing-imports'
+let g:ale_python_autopep8_options = '--max-line-length 120'
 
 "
 " Save the last cursor postion
