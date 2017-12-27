@@ -27,6 +27,7 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('vim-airline/vim-airline-themes')
   call dein#add('tpope/vim-rhubarb')
   call dein#add('zchee/deoplete-jedi')
+  call dein#add('mattn/gist-vim')
 
   if dein#check_install()
     call dein#install()
