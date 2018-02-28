@@ -65,6 +65,7 @@
       - {name: kops}
       - {name: python3}
       - {name: mpv}
+      - {name: stern}
     homebrew_cask_packages:
       - {name: google-chrome}
       - {name: google-japanese-ime}
