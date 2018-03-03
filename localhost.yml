@@ -143,6 +143,10 @@
         creates: ~/.oh-my-zsh/custom/plugins/zsh-completions
       notify: setup zsh
 
+    # custom fzf command
+    - name: custom fzf command
+      shell: cp ./dotfzf.zsh ~/.fzf.zsh
+
     # replace .zshrc.local file
     - name: replace .zshrc.local file
       shell: cp ./dotzshrc.local ~/.zshrc.local
