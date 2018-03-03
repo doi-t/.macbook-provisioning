@@ -28,6 +28,8 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('tpope/vim-rhubarb')
   call dein#add('zchee/deoplete-jedi')
   call dein#add('mattn/gist-vim')
+  call dein#add('junegunn/fzf.vim')
+  call dein#add('/usr/local/opt/fzf')
 
   if dein#check_install()
     call dein#install()
