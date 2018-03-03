@@ -61,11 +61,15 @@
       - {name: terraform}
       - {name: vault}
       - {name: nomad}
-      - {name: otto}
       - {name: kops}
-      - {name: python3}
+      - {name: python@2}
       - {name: mpv}
       - {name: stern}
+      - {name: iftop}
+      - {name: kubectx}
+      - {name: kube-ps1}
+      - {name: fzf}
+      - {name: fd}
     homebrew_cask_packages:
       - {name: google-chrome}
       - {name: google-japanese-ime}
