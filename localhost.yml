@@ -58,7 +58,7 @@
       - {name: packer}
       - {name: serf}
       - {name: consul}
-      - {name: terraform}
+      - {name: tfenv}
       - {name: vault}
       - {name: nomad}
       - {name: kops}
