@@ -62,6 +62,13 @@ if [ $commands[kubectl] ]; then
 fi
 
 #
+# helm
+#
+if [ $commands[helm] ]; then
+    source <(helm completion zsh)
+fi
+
+#
 # fzf
 #
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

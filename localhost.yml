@@ -66,10 +66,11 @@
       - {name: mpv}
       - {name: stern}
       - {name: iftop}
-      - {name: kubectx}
-      - {name: kube-ps1}
       - {name: fzf}
       - {name: fd}
+      - {name: kubectx}
+      - {name: kube-ps1}
+      - {name: kubernetes-helm}
     homebrew_cask_packages:
       - {name: google-chrome}
       - {name: google-japanese-ime}
