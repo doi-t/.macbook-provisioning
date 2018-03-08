@@ -30,6 +30,7 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('mattn/gist-vim')
   call dein#add('junegunn/fzf.vim')
   call dein#add('/usr/local/opt/fzf')
+  call dein#add('scrooloose/nerdtree')
 
   if dein#check_install()
     call dein#install()
@@ -68,6 +69,8 @@ set undoreload=10000
 nmap <C-p> :Files<CR>
 nmap <C-b> :Buffers<CR>
 nmap <C-c> :Commits<CR>
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 
 "
 " vim-colors-solarized
