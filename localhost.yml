@@ -144,9 +144,13 @@
         creates: ~/.oh-my-zsh/custom/plugins/zsh-completions
       notify: setup zsh
 
+    # install fzf configurations
+    - name: install fzf configurations
+      shell: /usr/local/opt/fzf/install --all --no-fish --64
+
     # custom fzf command
     - name: custom fzf command
-      shell: cp ./dotfzf.zsh ~/.fzf.zsh
+      shell: cp ./dotfzf.commands.zsh ~/.fzf.commands.zsh
 
     # replace .zshrc.local file
     - name: replace .zshrc.local file
