@@ -65,6 +65,10 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
+nmap <C-p> :Files<CR>
+nmap <C-b> :Buffers<CR>
+nmap <C-c> :Commits<CR>
+
 "
 " vim-colors-solarized
 "
