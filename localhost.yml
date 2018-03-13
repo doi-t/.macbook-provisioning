@@ -52,6 +52,7 @@
       - {name: nginx}
       - {name: source-highlight}
       - {name: jq}
+      - {name: httpie}
       - {name: hub}
       - {name: tig}
       - {name: jenkins}
