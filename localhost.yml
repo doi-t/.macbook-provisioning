@@ -55,7 +55,6 @@
       - {name: httpie}
       - {name: hub}
       - {name: tig}
-      - {name: jenkins}
       - {name: packer}
       - {name: serf}
       - {name: consul}
