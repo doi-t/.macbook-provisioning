@@ -55,7 +55,6 @@
       - {name: httpie}
       - {name: hub}
       - {name: tig}
-      - {name: jenkins}
       - {name: packer}
       - {name: serf}
       - {name: consul}
@@ -129,7 +128,6 @@
       homebrew_cask:
         name: "{{ item.name }}"
         state: "{{ item.state | default('installed') }}"
-        update_homebrew: yes
       with_items: '{{homebrew_cask_packages}}'
       register: cask_result
     - name: make directory for information of cask packages
