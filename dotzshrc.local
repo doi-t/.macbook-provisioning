@@ -2,6 +2,7 @@
 alias vi=nvim
 alias vim=nvim
 alias git=/usr/local/bin/git
+alias drmi='docker rmi $(docker images --filter "dangling=true" -q --no-trunc)'
 
 # zsh-completions
 plugins+=(zsh-completions)
