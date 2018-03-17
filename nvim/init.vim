@@ -88,6 +88,7 @@ let g:deoplete#enable_at_startup = 1
 " indentLine
 "
 autocmd Filetype json let g:indentLine_enabled = 0 " Ref. https://github.com/Yggdroot/indentLine/issues/172
+autocmd Filetype yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
 
 "
 " vim-terraform
