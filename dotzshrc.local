@@ -63,7 +63,9 @@ if [ $commands[kubectl] ]; then
 fi
 
 source /usr/local/bin/kube-ps1.sh
-PROMPT='$(kube_ps1)'$PROMPT
+PROMPT=$'
+%{$purple%}%n${PR_RST} in %{$limegreen%}%~${PR_RST} $vcs_info_msg_0_$(virtualenv_info)$(kube_ps1) at %{$orange%}%D{%F %T}${PR_RST}
+$ '
 
 #
 # helm
