@@ -62,6 +62,9 @@ if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
 
+source /usr/local/bin/kube-ps1.sh
+PROMPT='$(kube_ps1)'$PROMPT
+
 #
 # helm
 #

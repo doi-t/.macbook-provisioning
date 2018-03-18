@@ -184,8 +184,9 @@
 
     # pip
     - name: install get-pip.py
-      shell: wget --quiet https://bootstrap.pypa.io/get-pip.py -O /tmp/get-pip.py
-      notify: install pip
+      get_url:
+        url: https://bootstrap.pypa.io/get-pip.py
+        dest: /tmp/get-pip.py
 
     # pythonz
     - name: install pythonz
@@ -215,6 +216,12 @@
       get_url:
         url: https://raw.githubusercontent.com/dtan4/terraforming/master/contrib/zsh-completion/_terraforming
         dest: /usr/local/share/zsh/site-functions/_terraforming
+
+    # kubernetes
+    - name: install kube-ps1
+      get_url:
+        url: https://raw.githubusercontent.com/jonmosco/kube-ps1/master/kube-ps1.sh
+        dest: /usr/local/bin/kube-ps1.sh
 
   handlers:
     - name: run fc-cache
