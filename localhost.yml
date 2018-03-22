@@ -72,6 +72,8 @@
       - {name: kube-ps1}
       - {name: kubernetes-helm}
       - {name: hugo}
+      - {name: node}
+      - {name: yarn}
     homebrew_cask_packages:
       - {name: google-chrome}
       - {name: google-japanese-ime}
