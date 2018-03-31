@@ -74,6 +74,7 @@
       - {name: hugo}
       - {name: node}
       - {name: yarn}
+      - {name: minamijoyo/tfschema/tfschema}
     homebrew_cask_packages:
       - {name: google-chrome}
       - {name: google-japanese-ime}
