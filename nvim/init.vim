@@ -31,6 +31,8 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('junegunn/fzf.vim')
   call dein#add('/usr/local/opt/fzf')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('posva/vim-vue')
+  call dein#add('Shougo/context_filetype.vim')
 
   if dein#check_install()
     call dein#install()
