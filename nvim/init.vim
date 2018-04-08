@@ -47,6 +47,7 @@ filetype plugin indent on
 "
 " global
 "
+language en_US
 set number
 set spell
 set hidden
