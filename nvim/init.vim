@@ -72,6 +72,7 @@ set undoreload=10000
 nmap <C-p> :Files<CR>
 nmap <C-i> :Buffers<CR>
 nmap <C-c> :Commits<CR>
+nmap <C-g> :Gbrowse<CR>
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 
