@@ -97,6 +97,7 @@
       - {name: bitbar}
       - {name: spectacle}
       - {name: authy}
+      - {name: discord}
 
   pre_tasks:
     - shell: echo 'mackbook provisioning!'
