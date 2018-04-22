@@ -17,7 +17,7 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('tpope/vim-fugitive')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('hashivim/vim-hashicorp-tools')
-  call dein#add('fatih/vim-go')
+  call dein#add('fatih/vim-go', {'hook_post_update': 'GoUpdateBinaries'})
   call dein#add('w0rp/ale')
   call dein#add('jmcantrell/vim-virtualenv')
   call dein#add('bfredl/nvim-miniyank')
@@ -33,6 +33,8 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('scrooloose/nerdtree')
   call dein#add('posva/vim-vue')
   call dein#add('Shougo/context_filetype.vim')
+  call dein#add('AndrewRadev/splitjoin.vim')
+  call dein#add('SirVer/ultisnips')
 
   if dein#check_install()
     call dein#install()
@@ -68,7 +70,9 @@ set undodir=~/.config/nvim/backups
 set undofile
 set undolevels=1000
 set undoreload=10000
+set updatetime=100
 
+let mapleader = ","
 nmap <C-p> :Files<CR>
 nmap <C-i> :Buffers<CR>
 nmap <C-c> :Commits<CR>
@@ -146,3 +150,61 @@ autocmd BufReadPost *
 set clipboard=unnamed
 map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
+
+"
+" vim-go: https://github.com/fatih/vim-go-tutorial
+" See ':help go-settings'
+" See ':help go-commands'
+"
+" NOTE: Run 'gometalinter --install' on your terminal if you have not run them yet.
+" NOTE: Run ':GoUpdateBinaries' if you got an error on ':GoDef' or ':GoDoc'
+"
+" NOTES:
+" 'ctrl-]' -> ':GoDef'
+" 'ctrl-t' -> ':GoDefPop'
+" 'K'      -> ':GoDoc'
+" ']]'     -> jump to next function
+" '[['     -> jump to previous function
+"
+autocmd FileType go set autowrite
+let g:go_fmt_command = "goimports"
+
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_extra_types = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 1
+
+let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave_enabled = ['vet', 'golint']
+let g:go_metalinter_autosave = 1
+
+let g:go_auto_type_info = 1
+" let g:go_auto_sameids = 1
+
+" run :GoBuild or :GoTestCompile based on the go file
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+autocmd FileType go nmap <C-n> :cnext<CR>
+autocmd FileType go nmap <C-m> :cprevious<CR>
+autocmd FileType go nnoremap <leader>a :cclose<CR>
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <Leader>l <Plug>(go-metalinter)
+autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<CR>
+
+autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
+autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
+autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
