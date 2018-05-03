@@ -54,6 +54,11 @@ export GOPATH=${HOME}/go
 export PATH=$PATH:$GOPATH/bin
 
 #
+# rust
+#
+source $HOME/.cargo/env
+
+#
 # kubernetes
 #
 source /usr/local/bin/google-cloud-sdk/completion.zsh.inc

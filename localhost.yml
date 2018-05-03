@@ -146,6 +146,13 @@
       args:
         creates: ~/.inputrc
 
+    # rust
+    - name: download rust installer
+      get_url:
+        url: https://sh.rustup.rs
+        dest: /tmp/rustup.sh
+      notify: install rust
+
     # oh-my-zsh
     - name: install oh-my-zsh
       shell: curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
@@ -237,3 +244,5 @@
       shell: cp ./nvim/init.vim ~/.config/nvim/init.vim
     - name: install pip
       shell: python /tmp/get-pip.py
+    - name: install rust
+      shell: sh /tmp/rustup.sh -y
