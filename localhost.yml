@@ -75,6 +75,7 @@
       - {name: node}
       - {name: yarn}
       - {name: minamijoyo/tfschema/tfschema}
+      - {name: parquet-tools}
     homebrew_cask_packages:
       - {name: google-chrome}
       - {name: google-japanese-ime}
