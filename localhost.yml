@@ -76,6 +76,7 @@
       - {name: yarn}
       - {name: minamijoyo/tfschema/tfschema}
       - {name: parquet-tools}
+      - {name: pre-commit}
     homebrew_cask_packages:
       - {name: google-chrome}
       - {name: google-japanese-ime}

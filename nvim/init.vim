@@ -35,6 +35,7 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('Shougo/context_filetype.vim')
   call dein#add('AndrewRadev/splitjoin.vim')
   call dein#add('SirVer/ultisnips')
+  call dein#add('ambv/black')
 
   if dein#check_install()
     call dein#install()
@@ -122,7 +123,7 @@ let g:ale_linters = {
  \  'vim': ['vint']
 \}
 let g:ale_fixers = {
-\ 'python':     ['remove_trailing_lines', 'trim_whitespace', 'add_blank_lines_for_python_control_statements', 'autopep8', 'isort'],
+\ 'python':     ['remove_trailing_lines', 'trim_whitespace'],
 \ 'bash':       ['remove_trailing_lines', 'trim_whitespace'],
 \ 'docker':     ['remove_trailing_lines', 'trim_whitespace'],
 \ 'html':       ['remove_trailing_lines', 'trim_whitespace'],
@@ -134,7 +135,12 @@ let g:ale_fixers = {
 \ 'vim':        ['remove_trailing_lines', 'trim_whitespace'],
 \}
 let g:ale_python_mypy_options = '--ignore-missing-imports'
-let g:ale_python_autopep8_options = '--max-line-length 120'
+
+"
+" black
+"
+autocmd BufWritePre *.py execute ':Black'
+
 
 "
 " Save the last cursor postion
