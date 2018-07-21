@@ -72,6 +72,11 @@ PROMPT=$'%{$purple%}%n${PR_RST} in %{$limegreen%}%~${PR_RST} $vcs_info_msg_0_$(v
 $ '
 
 #
+# stern
+#
+source <(stern --completion=zsh)
+
+#
 # helm
 #
 if [ $commands[helm] ]; then
