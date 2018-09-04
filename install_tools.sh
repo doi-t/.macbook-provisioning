@@ -19,6 +19,7 @@ pip2 install --upgrade neovim
 pip3 install --upgrade neovim
 gem install neovim
 pip install mypy yamllint
+pip install black
 
 # terminal
 echo 'setup iTerm2 Color Presets: https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized'
