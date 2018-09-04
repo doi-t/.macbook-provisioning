@@ -224,10 +224,6 @@
     # terraform
     - name: install zsh-completion for terraform
       get_url:
-        url: https://raw.githubusercontent.com/hashicorp/terraform/master/contrib/zsh-completion/_terraform
-        dest: /usr/local/share/zsh/site-functions/_terraform
-    - name: install zsh-completion for terraform
-      get_url:
         url: https://raw.githubusercontent.com/dtan4/terraforming/master/contrib/zsh-completion/_terraforming
         dest: /usr/local/share/zsh/site-functions/_terraforming
 

@@ -34,3 +34,6 @@ gometalinter --install
 
 # rust
 cargo install bat
+
+# terraform
+terraform -install-autocomplete # Ref. https://github.com/hashicorp/terraform/tree/master/contrib/zsh-completion
