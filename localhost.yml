@@ -9,6 +9,7 @@
       - homebrew/binary
       - homebrew/dupes
       - sanemat/font
+      - mackerelio/mackerel-agent
     homebrew_packages:
       - {name: gcc}
       - {name: readline}
@@ -76,6 +77,7 @@
       - {name: minamijoyo/tfschema/tfschema}
       - {name: parquet-tools}
       - {name: pre-commit}
+      - {name: mkr}
     homebrew_cask_packages:
       - {name: google-chrome}
       - {name: google-japanese-ime}
