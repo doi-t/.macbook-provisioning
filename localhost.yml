@@ -78,6 +78,7 @@
       - {name: parquet-tools}
       - {name: pre-commit}
       - {name: mkr}
+      - {name: dep}
     homebrew_cask_packages:
       - {name: google-chrome}
       - {name: google-japanese-ime}
