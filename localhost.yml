@@ -237,6 +237,10 @@
         url: https://raw.githubusercontent.com/jonmosco/kube-ps1/master/kube-ps1.sh
         dest: /usr/local/bin/kube-ps1.sh
 
+    # sops
+    - name: install sops
+      shell: go get -u go.mozilla.org/sops/cmd/sops
+
   handlers:
     - name: run fc-cache
       shell: fc-cache -vf
