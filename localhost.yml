@@ -79,6 +79,7 @@
       - {name: pre-commit}
       - {name: mkr}
       - {name: dep}
+      - {name: kustomize}
     homebrew_cask_packages:
       - {name: google-chrome}
       - {name: google-japanese-ime}
@@ -235,10 +236,6 @@
       get_url:
         url: https://raw.githubusercontent.com/jonmosco/kube-ps1/master/kube-ps1.sh
         dest: /usr/local/bin/kube-ps1.sh
-
-    # kustomize
-    - name: install kustomize
-      shell: go get github.com/kubernetes-sigs/kustomize
 
   handlers:
     - name: run fc-cache
