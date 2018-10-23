@@ -8,7 +8,7 @@ rbenv global [version]      # => setuup the default ruby version
 sudo gem update --system
 
 # install vagrant plugin
-vagrant plugin install sahara vagrant-cachier vagrant-exec vagrant-proxyconf vagrant-vbguest vagrant-omnibus
+vagrant plugin install sahara vagrant-cachier vagrant-exec vagrant-proxyconf vagrant-vbguest vagrant-omnibus vagrant-rsync-back
 
 # python tools
 pip install awscli
