@@ -1,0 +1,27 @@
+- homebrew_cask:
+    name: "{{packages}}"
+    state: present
+  when: ansible_os_family == "Darwin"
+  vars:
+    packages:
+      - virtualbox
+      - vagrant
+      - vagrant-manager
+      - docker-edge
+      - java
+      - alfred
+      - clipy
+      - spectacle
+      - google-chrome
+      - iterm2
+      - visual-studio-code
+      - slack
+      - discord
+      - skype
+      - 1password
+      - anki
+      - kindle
+      - adobe-reader
+      - dropbox
+      - bitbar
+      - authy
