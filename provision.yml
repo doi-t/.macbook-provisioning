@@ -1,0 +1,6 @@
+---
+- hosts: all
+  roles:
+    - role: taps
+    - role: utils
+    - role: cask
