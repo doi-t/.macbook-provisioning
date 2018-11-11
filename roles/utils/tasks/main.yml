@@ -39,6 +39,7 @@
     - parquet-tools
     - pre-commit
     - tfenv
+    - anyenv
     - minamijoyo/tfschema/tfschema
     - httpie
     - hub
