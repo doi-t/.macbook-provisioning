@@ -4,4 +4,5 @@
     - role: taps
     - role: utils
     - role: cask
+    - role: terminal
     - role: vim

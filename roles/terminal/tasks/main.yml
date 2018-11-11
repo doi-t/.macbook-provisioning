@@ -1,0 +1,26 @@
+---
+- name: install oh-my-zsh
+  shell: curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  args:
+    creates: ~/.oh-my-zsh/
+
+- name: install zsh-completions
+  shell: git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
+  args:
+    creates: ~/.oh-my-zsh/custom/plugins/zsh-completions
+
+- name: Update ~/.zshrc.local
+  shell: cp ./dotfiles/.zshrc.local ~/.zshrc.local
+
+# FIXME
+- command: grep '.zshrc.local' $HOME/.zshrc
+  register: check_zshrc
+  ignore_errors: True
+
+- name: setup .zshrc
+  shell: |
+    zshrc=~/.zshrc
+    sed -ie 's/ZSH_THEME=.*/ZSH_THEME=\"steeef\"/' $zshrc
+    echo '[ -f ~/.zshrc.local ] && source ~/.zshrc.local' >> $zshrc
+    echo '[ -f ~/.zshrc.credentials ] && source ~/.zshrc.credentials' >> $zshrc
+  when: check_zshrc is failed

@@ -22,20 +22,6 @@
         dest: /tmp/rustup.sh
       notify: install rust
 
-    # oh-my-zsh
-    - name: install oh-my-zsh
-      shell: curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
-      args:
-        creates: ~/.oh-my-zsh/
-      notify: install zsh-completions
-
-    # zsh-completions
-    - name: install zsh-completions
-      shell: git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
-      args:
-        creates: ~/.oh-my-zsh/custom/plugins/zsh-completions
-      notify: setup zsh
-
     # install fzf configurations
     - name: install fzf configurations
       shell: /usr/local/opt/fzf/install --all --no-fish --64
@@ -43,10 +29,6 @@
     # custom fzf command
     - name: custom fzf command
       shell: cp ./dotfzf.commands.zsh ~/.fzf.commands.zsh
-
-    # replace .zshrc.local file
-    - name: replace .zshrc.local file
-      shell: cp ./dotzshrc.local ~/.zshrc.local
 
     # solarized dircolor for ls
     - name: install solarized dircolor
@@ -84,7 +66,5 @@
   handlers:
     - name: run fc-cache
       shell: fc-cache -vf
-    - name: setup zsh
-      script: ./setup_zsh.sh
     - name: install rust
       shell: sh /tmp/rustup.sh -y
