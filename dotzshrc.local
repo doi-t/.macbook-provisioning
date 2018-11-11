@@ -19,6 +19,10 @@ export PATH="/usr/local/sbin:$PATH"
 export EDITOR=nvim
 eval "$(direnv hook zsh)"
 
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
 # brew cask
 export HOMEBREW_VERBOSE=1
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"

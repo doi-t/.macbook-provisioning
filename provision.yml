@@ -4,3 +4,4 @@
     - role: taps
     - role: utils
     - role: cask
+    - role: vim

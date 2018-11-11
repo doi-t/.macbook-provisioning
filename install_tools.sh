@@ -11,15 +11,7 @@ sudo gem update --system
 vagrant plugin install sahara vagrant-cachier vagrant-exec vagrant-proxyconf vagrant-vbguest vagrant-omnibus vagrant-rsync-back
 
 # python tools
-pip install awscli
 pip install virtualenv
-
-# neovim
-pip2 install --upgrade neovim
-pip3 install --upgrade neovim
-gem install neovim
-pip install mypy yamllint
-pip install black
 
 # terminal
 echo 'setup iTerm2 Color Presets: https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized'

@@ -48,11 +48,6 @@
     - name: replace .zshrc.local file
       shell: cp ./dotzshrc.local ~/.zshrc.local
 
-    # neovim
-    - name: install dein
-      shell: curl -sL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s ~/.config/nvim/dein
-      notify: install nvim/init.vim
-
     # solarized dircolor for ls
     - name: install solarized dircolor
       get_url:
@@ -62,18 +57,6 @@
     # tmux
     - name: replace .tmux.conf
       shell: cp ./dottmux.conf ~/.tmux.conf
-
-    # pip
-    - name: install get-pip.py
-      get_url:
-        url: https://bootstrap.pypa.io/get-pip.py
-        dest: /tmp/get-pip.py
-
-    # pythonz
-    - name: install pythonz
-      shell: curl -skL https://raw.github.com/saghul/pythonz/master/pythonz-install | bash
-      args:
-        creates: ~/.pythonz/
 
     # Ricty
     - name: install xquartz for Ricty
@@ -103,9 +86,5 @@
       shell: fc-cache -vf
     - name: setup zsh
       script: ./setup_zsh.sh
-    - name: install nvim/init.vim
-      shell: cp ./nvim/init.vim ~/.config/nvim/init.vim
-    - name: install pip
-      shell: python /tmp/get-pip.py
     - name: install rust
       shell: sh /tmp/rustup.sh -y
