@@ -41,7 +41,7 @@ source /usr/local/bin/aws_zsh_completer.sh
 # go
 #
 export GOPATH=${HOME}/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 
 #
 # rust
