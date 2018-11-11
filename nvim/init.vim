@@ -90,11 +90,6 @@ set background=dark
 colorscheme solarized
 
 "
-" deoplete.nvim
-"
-let g:deoplete#enable_at_startup = 1
-
-"
 " indentLine
 "
 autocmd Filetype json let g:indentLine_enabled = 0 " Ref. https://github.com/Yggdroot/indentLine/issues/172
@@ -217,19 +212,22 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 
 "
-" deoplete-go
-" " NOTE: Run ':GoUpdateBinaries' and 'gocode close' if you got an error
+" deoplete.nvim
 "
+let g:deoplete#enable_at_startup = 1
+" Path to python interpreter for neovim
+let g:python3_host_prog  = '/usr/local/bin/python3'
+" Skip the check of neovim module
+let g:python3_host_skip_check = 1
 " neocomplete like
 set completeopt+=noinsert
 " deoplete.nvim recommend
 set completeopt+=noselect
 
-" Path to python interpreter for neovim
-let g:python3_host_prog  = '/usr/local/bin/python3'
-" Skip the check of neovim module
-let g:python3_host_skip_check = 1
+"
+" deoplete-go
+" " NOTE: Run ':GoUpdateBinaries' and 'gocode close' if you got an error
+"
 
-" deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
