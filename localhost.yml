@@ -22,14 +22,6 @@
         dest: /tmp/rustup.sh
       notify: install rust
 
-    # install fzf configurations
-    - name: install fzf configurations
-      shell: /usr/local/opt/fzf/install --all --no-fish --64
-
-    # custom fzf command
-    - name: custom fzf command
-      shell: cp ./dotfzf.commands.zsh ~/.fzf.commands.zsh
-
     # solarized dircolor for ls
     - name: install solarized dircolor
       get_url:

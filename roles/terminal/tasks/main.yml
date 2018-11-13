@@ -24,3 +24,11 @@
     echo '[ -f ~/.zshrc.local ] && source ~/.zshrc.local' >> $zshrc
     echo '[ -f ~/.zshrc.credentials ] && source ~/.zshrc.credentials' >> $zshrc
   when: check_zshrc is failed
+
+- name: install fzf configurations
+  shell: /usr/local/opt/fzf/install --all --no-fish --64
+  args:
+    creates:
+
+- name: update custom fzf commands
+  shell: cp ./dotfiles/.fzf.commands.zsh ~/.fzf.commands.zsh
