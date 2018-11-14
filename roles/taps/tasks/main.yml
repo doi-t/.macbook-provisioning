@@ -4,8 +4,6 @@
   when: ansible_os_family == "Darwin"
   vars:
     taps:
-      - homebrew/binary
-      - homebrew/dupes
       - caskroom/versions
       - sanemat/font
       - mackerelio/mackerel-agent
