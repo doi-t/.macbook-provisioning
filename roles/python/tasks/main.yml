@@ -1,0 +1,4 @@
+---
+- name: Install pip packages
+  pip:
+    requirements: ./requirements.local.txt

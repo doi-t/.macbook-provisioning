@@ -15,6 +15,10 @@
 - name: set up my zshrc config other than oh-my-zsh
   shell: cp ./dotfiles/.myconfig.zsh $HOME/.oh-my-zsh/custom/myconfig.zsh
 
+- name: install terraform completion
+  shell: terraform -install-autocomplete # Ref. https://github.com/hashicorp/terraform/tree/master/contrib/zsh-completion
+  ignore_errors: yes
+
 - name: install solarized dircolor
   get_url:
     url: https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark

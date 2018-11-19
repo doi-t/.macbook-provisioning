@@ -1,0 +1,22 @@
+---
+- name: install go and tools
+  homebrew:
+    name: "{{packages}}"
+    state: present
+    update_homebrew: yes
+  when: ansible_os_family == "Darwin"
+  vars:
+    packages:
+      - go
+      - dep
+      - gometalinter
+
+- name: install commands via go get
+  shell: go get -u "{{item}}"
+  loop:
+    - github.com/golang/protobuf/protoc-gen-go
+    - google.golang.org/grpc
+    - go.mozilla.org/sops/cmd/sops
+
+- name: install go linter
+  shell: gometalinter --install

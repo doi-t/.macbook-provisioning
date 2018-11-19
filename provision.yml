@@ -6,3 +6,6 @@
     - role: cask
     - role: terminal
     - role: vim
+    - role: go
+    - role: python
+    - role: rust

@@ -44,8 +44,6 @@
       - hub
       - tig
       - w3m
-      - go
-      - dep
       - lua
       - python
       - python@2
@@ -65,6 +63,7 @@
       - kube-ps1
       - kubernetes-helm
       - kops
-      - hugo
       - awscli
       - mkr
+      - hugo
+      - protobuf
