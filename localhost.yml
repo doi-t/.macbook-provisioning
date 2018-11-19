@@ -9,28 +9,12 @@
   pre_tasks:
     - shell: echo 'mackbook provisioning!'
   tasks:
-    # tab completion for Mac OS X terminal
-    - name: setup tab completion
-      shell: cat './inputrc.txt' >> ~/.inputrc
-      args:
-        creates: ~/.inputrc
-
     # rust
     - name: download rust installer
       get_url:
         url: https://sh.rustup.rs
         dest: /tmp/rustup.sh
       notify: install rust
-
-    # solarized dircolor for ls
-    - name: install solarized dircolor
-      get_url:
-        url: https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
-        dest: ~/.dircolors-solarized
-
-    # tmux
-    - name: replace .tmux.conf
-      shell: cp ./dottmux.conf ~/.tmux.conf
 
     # Ricty
     - name: install xquartz for Ricty

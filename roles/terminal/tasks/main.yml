@@ -1,4 +1,7 @@
 ---
+- name: setup tab completion
+  shell: cp ./dotfiles/.inputrc $HOME/.inputrc
+
 - name: install oh-my-zsh
   shell: curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
   args:
@@ -9,26 +12,10 @@
   args:
     creates: ~/.oh-my-zsh/custom/plugins/zsh-completions
 
-- name: Update ~/.zshrc.local
-  shell: cp ./dotfiles/.zshrc.local ~/.zshrc.local
+- name: set up my zshrc config other than oh-my-zsh
+  shell: cp ./dotfiles/.myconfig.zsh $HOME/.oh-my-zsh/custom/myconfig.zsh
 
-# FIXME
-- command: grep '.zshrc.local' $HOME/.zshrc
-  register: check_zshrc
-  ignore_errors: True
-
-- name: setup .zshrc
-  shell: |
-    zshrc=~/.zshrc
-    sed -ie 's/ZSH_THEME=.*/ZSH_THEME=\"steeef\"/' $zshrc
-    echo '[ -f ~/.zshrc.local ] && source ~/.zshrc.local' >> $zshrc
-    echo '[ -f ~/.zshrc.credentials ] && source ~/.zshrc.credentials' >> $zshrc
-  when: check_zshrc is failed
-
-- name: install fzf configurations
-  shell: /usr/local/opt/fzf/install --all --no-fish --64
-  args:
-    creates:
-
-- name: update custom fzf commands
-  shell: cp ./dotfiles/.fzf.commands.zsh ~/.fzf.commands.zsh
+- name: install solarized dircolor
+  get_url:
+    url: https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
+    dest: ~/.dircolors-solarized
