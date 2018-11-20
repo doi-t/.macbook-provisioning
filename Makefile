@@ -1,4 +1,4 @@
 .PHONY: provision
 
 provision:
-	ansible-playbook --diff -vv provision.yml -i hosts
+	ansible-playbook --diff -v provision.yml -i hosts
