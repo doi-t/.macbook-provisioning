@@ -96,8 +96,12 @@ colorscheme solarized
 "
 " indentLine
 "
+
 autocmd Filetype json let g:indentLine_enabled = 0 " Ref. https://github.com/Yggdroot/indentLine/issues/172
 autocmd Filetype yaml setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" Ref. https://github.com/Yggdroot/indentLine/issues/210#issuecomment-405104437
+set list lcs=tab:\¦\ " Workaround for tab
 
 "
 " vim-terraform
