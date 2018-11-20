@@ -1,3 +1,6 @@
+# oh-my-zsh
+unsetopt auto_cd
+
 # alias
 alias vi=nvim
 alias vim=nvim
