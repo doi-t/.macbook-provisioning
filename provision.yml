@@ -1,0 +1,13 @@
+---
+- hosts: all
+  roles:
+    - role: taps
+    - role: utils
+    - role: cask
+    - role: terminal
+    - role: vim
+    - role: go
+    - role: python
+    - role: rust
+    - role: vagrant
+    - role: gcp

@@ -13,11 +13,16 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim')
 
   call dein#add('Shougo/deoplete.nvim')
+  " call dein#add('prabirshrestha/asyncomplete.vim')
+  " call dein#add('prabirshrestha/async.vim')
+  " call dein#add('prabirshrestha/vim-lsp')
+  " call dein#add('prabirshrestha/asyncomplete-lsp.vim')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('tpope/vim-fugitive')
   call dein#add('airblade/vim-gitgutter')
   call dein#add('hashivim/vim-hashicorp-tools')
   call dein#add('fatih/vim-go', {'hook_post_update': 'GoUpdateBinaries'})
+  call dein#add('zchee/deoplete-go', {'build': 'make'})
   call dein#add('w0rp/ale')
   call dein#add('jmcantrell/vim-virtualenv')
   call dein#add('bfredl/nvim-miniyank')
@@ -87,11 +92,6 @@ let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 syntax enable
 set background=dark
 colorscheme solarized
-
-"
-" deoplete.nvim
-"
-let g:deoplete#enable_at_startup = 1
 
 "
 " indentLine
@@ -214,3 +214,25 @@ autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
 autocmd Filetype go command! -bang AV call go#alternate#Switch(<bang>0, 'vsplit')
 autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
+
+"
+" deoplete.nvim
+"
+let g:deoplete#enable_at_startup = 1
+" Path to python interpreter for neovim
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog  = '/usr/local/bin/python3'
+" Skip the check of neovim module
+let g:python3_host_skip_check = 1
+" neocomplete like
+set completeopt+=noinsert
+" deoplete.nvim recommend
+set completeopt+=noselect
+
+"
+" deoplete-go
+" " NOTE: Run ':GoUpdateBinaries' and 'gocode close' if you got an error
+"
+
+let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
+let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']

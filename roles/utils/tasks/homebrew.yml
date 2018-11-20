@@ -1,0 +1,72 @@
+---
+- name: Install utils via homebrew
+  homebrew:
+    name: "{{packages}}"
+    state: present
+    update_homebrew: yes
+  when: ansible_os_family == "Darwin"
+  vars:
+    packages:
+      - git
+      - zsh
+      - fzf
+      - fd
+      - neovim
+      - tmux
+      - gcc
+      - cmake
+      - autoconf
+      - automake
+      - readline
+      - openssl
+      - pkg-config
+      - coreutils
+      - libxml2
+      - libxslt
+      - libiconv
+      - source-highlight
+      - wget
+      - curl
+      - ctags
+      - tree
+      - watch
+      - lv
+      - bat
+      - jq
+      - nkf
+      - htop
+      - iftop
+      - direnv
+      - parquet-tools
+      - pre-commit
+      - tfenv
+      - minamijoyo/tfschema/tfschema
+      - httpie
+      - hub
+      - tig
+      - w3m
+      - lua
+      - python
+      - python@2
+      - ansible
+      - node
+      - yarn
+      - redis
+      - nginx
+      - packer
+      - serf
+      - consul
+      - vault
+      - nomad
+      - kustomize
+      - stern
+      - kubectx
+      - kube-ps1
+      - kubernetes-helm
+      - kops
+      - awscli
+      - mkr
+      - hugo
+      - protobuf
+      - sops
+      - telnet

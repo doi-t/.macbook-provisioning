@@ -1,0 +1,8 @@
+---
+- name: install fzf configurations
+  shell: /usr/local/opt/fzf/install --all --no-fish --64
+  args:
+    creates:
+
+- name: update custom fzf commands
+  shell: cp ./dotfiles/.fzf.commands.zsh $HOME/.fzf.commands.zsh

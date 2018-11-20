@@ -1,0 +1,20 @@
+---
+- homebrew_tap:
+    name: alecthomas/homebrew-tap
+    state: present
+  when: ansible_os_family == "Darwin"
+
+- name: install go and tools
+  homebrew:
+    name: "{{packages}}"
+    state: present
+    update_homebrew: yes
+  when: ansible_os_family == "Darwin"
+  vars:
+    packages:
+      - go
+      - dep
+      - gometalinter
+
+- name: install go linter
+  shell: gometalinter --install

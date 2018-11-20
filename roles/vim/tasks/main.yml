@@ -1,0 +1,21 @@
+---
+- name: Install dein
+  shell: curl -sL https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh | sh -s $HOME/.config/nvim/dein
+  args:
+    creates: $HOME/.config/nvim/dein
+
+- name: install neovim replated pip packages
+  pip:
+    executable: "/usr/local/bin/pip3"
+    name: "{{packages}}"
+    extra_args: --user
+  when: ansible_os_family == "Darwin"
+  vars:
+    packages:
+      - neovim
+      - mypy
+      - yamllint
+      - black
+
+- name: Update .config/nvim/init.vim
+  shell: cp dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim

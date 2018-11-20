@@ -1,0 +1,9 @@
+- homebrew_tap:
+    name: "{{taps}}"
+    state: present
+  when: ansible_os_family == "Darwin"
+  vars:
+    taps:
+      - caskroom/versions
+      - sanemat/font
+      - mackerelio/mackerel-agent

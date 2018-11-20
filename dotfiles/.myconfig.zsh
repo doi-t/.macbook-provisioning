@@ -19,6 +19,10 @@ export PATH="/usr/local/sbin:$PATH"
 export EDITOR=nvim
 eval "$(direnv hook zsh)"
 
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
 # brew cask
 export HOMEBREW_VERBOSE=1
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
@@ -33,16 +37,6 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
 #
-# ruby
-#
-export PATH="$HOME/.rbenv/bin:$PATH"
-if which rbenv > /dev/null; then
-    eval "$(rbenv init - zsh)"
-fi
-# chefdk
-eval "$(chef shell-init zsh)"
-
-#
 # aws
 #
 source /usr/local/bin/aws_zsh_completer.sh
@@ -51,7 +45,7 @@ source /usr/local/bin/aws_zsh_completer.sh
 # go
 #
 export GOPATH=${HOME}/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 
 #
 # rust
@@ -86,7 +80,6 @@ fi
 #
 # fzf
 #
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.fzf.commands.zsh ] && source ~/.fzf.commands.zsh
 export FZF_DEFAULT_OPTS='--height 40% --reverse --inline-info --sort 20000'
 export FZF_DEFAULT_COMMAND='fd --type file --follow --hidden --exclude .git'

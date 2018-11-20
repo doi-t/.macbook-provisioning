@@ -1,0 +1,25 @@
+---
+- name: setup tab completion
+  shell: cp ./dotfiles/.inputrc $HOME/.inputrc
+
+- name: install oh-my-zsh
+  shell: curl -sL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
+  args:
+    creates: ~/.oh-my-zsh/
+
+- name: install zsh-completions
+  shell: git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
+  args:
+    creates: ~/.oh-my-zsh/custom/plugins/zsh-completions
+
+- name: set up my zshrc config other than oh-my-zsh
+  shell: cp ./dotfiles/.myconfig.zsh $HOME/.oh-my-zsh/custom/myconfig.zsh
+
+- name: install terraform completion
+  shell: terraform -install-autocomplete # Ref. https://github.com/hashicorp/terraform/tree/master/contrib/zsh-completion
+  ignore_errors: yes
+
+- name: install solarized dircolor
+  get_url:
+    url: https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.256dark
+    dest: ~/.dircolors-solarized
