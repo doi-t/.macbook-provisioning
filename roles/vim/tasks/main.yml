@@ -17,5 +17,5 @@
       - yamllint
       - black
 
-- name: Update nvim/init.vim
-  shell: cp ./nvim/init.vim ~/.config/nvim/init.vim
+- name: Update .config/nvim/init.vim
+  shell: cp dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim

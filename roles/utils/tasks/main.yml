@@ -1,5 +1,6 @@
 
 ---
 - include: homebrew.yml
-- include: anyenv.yml
   when: ansible_os_family == "Darwin"
+
+- include: anyenv.yml
