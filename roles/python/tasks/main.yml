@@ -1,4 +1,12 @@
 ---
 - name: Install pip packages
   pip:
-    requirements: ./requirements.local.txt
+    name: "{{packages}}"
+    executable: pip3
+  vars:
+    packages:
+      - virtualenv
+      - neovim
+      - black
+      - mypy
+      - protobuf

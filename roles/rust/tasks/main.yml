@@ -6,8 +6,3 @@
 
 - name: install rust
   shell: sh /tmp/rustup.sh -y
-
-- name: install commands via cargo
-  shell: cargo install "{{item}}"
-  loop:
-    - bat

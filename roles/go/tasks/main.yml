@@ -1,4 +1,9 @@
 ---
+- homebrew_tap:
+    name: alecthomas/homebrew-tap
+    state: present
+  when: ansible_os_family == "Darwin"
+
 - name: install go and tools
   homebrew:
     name: "{{packages}}"
@@ -10,13 +15,6 @@
       - go
       - dep
       - gometalinter
-
-- name: install commands via go get
-  shell: go get -u "{{item}}"
-  loop:
-    - github.com/golang/protobuf/protoc-gen-go
-    - google.golang.org/grpc
-    - go.mozilla.org/sops/cmd/sops
 
 - name: install go linter
   shell: gometalinter --install

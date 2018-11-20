@@ -31,6 +31,7 @@
       - tree
       - watch
       - lv
+      - bat
       - jq
       - nkf
       - htop
@@ -67,3 +68,5 @@
       - mkr
       - hugo
       - protobuf
+      - sops
+      - telnet
