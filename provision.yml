@@ -9,3 +9,5 @@
     - role: go
     - role: python
     - role: rust
+    - role: vagrant
+    - role: gcp

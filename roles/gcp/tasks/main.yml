@@ -1,0 +1,9 @@
+---
+- name: Install gcloud command
+  debug:
+    msg:
+      - "Download google-cloud-sdk to '/usr/local/bin/google-cloud-sdk' from https://cloud.google.com/sdk/docs/quickstart-macos"
+      - "Install gcloud command with 'sh /usr/local/bin/google-cloud-sdk/install.sh'"
+
+- name: update gcloud components
+  shell: gcloud components update
