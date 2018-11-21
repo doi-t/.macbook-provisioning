@@ -56,10 +56,10 @@ export PATH=$PATH:$(go env GOPATH)/bin
 source $HOME/.cargo/env
 
 #
-# kubernetes
+# gcloud & kubernetes
 #
-source /usr/local/bin/google-cloud-sdk/completion.zsh.inc
-source /usr/local/bin/google-cloud-sdk/path.zsh.inc
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
