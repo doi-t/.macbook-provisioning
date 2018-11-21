@@ -9,13 +9,18 @@
     executable: "/usr/local/bin/pip3"
     name: "{{packages}}"
     extra_args: --user
-  when: ansible_os_family == "Darwin"
   vars:
     packages:
       - neovim
       - mypy
       - yamllint
       - black
+
+- name: install neovim pip packages with pip2 as well
+  pip:
+    executable: "/usr/local/bin/pip2"
+    name: neovim
+    extra_args: --user
 
 - name: Update .config/nvim/init.vim
   shell: cp dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim

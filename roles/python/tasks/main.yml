@@ -6,7 +6,4 @@
   vars:
     packages:
       - virtualenv
-      - neovim
-      - black
-      - mypy
       - protobuf

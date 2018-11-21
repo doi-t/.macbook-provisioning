@@ -1,10 +1,16 @@
 ---
-- name: Install anyenv
+- name: install anyenv
   shell: git clone https://github.com/riywo/anyenv $HOME/.anyenv
   args:
     creates: $HOME/.anyenv
 
-- name: Install pyenv-virtualenv
+- name: install pyenv-virtualenv
   shell: git clone https://github.com/yyuu/pyenv-virtualenv $HOME/.anyenv/envs/pyenv/plugins/pyenv-virtualenv
   args:
     creates: $HOME/.anyenv/envs/pyenv/plugins/pyenv-virtualenv
+
+- name: install pyenv
+  shell: anyenv install pyenv
+  args:
+    creates: $HOME/.anyenv/envs/pyenv/bin/pyenv
+
