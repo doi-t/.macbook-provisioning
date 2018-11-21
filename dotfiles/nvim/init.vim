@@ -129,7 +129,8 @@ let g:ale_completion_enabled = 1
 let g:ale_linters = {
 \   'python': ['mypy'],
 \   'yaml': ['yamllint'],
- \  'vim': ['vint']
+\   'vim': ['vint'],
+\   'go': ['gometalinter', 'go build']
 \}
 let g:ale_fixers = {
 \ 'python':     ['remove_trailing_lines', 'trim_whitespace'],
@@ -144,6 +145,20 @@ let g:ale_fixers = {
 \ 'vim':        ['remove_trailing_lines', 'trim_whitespace'],
 \}
 let g:ale_python_mypy_options = '--ignore-missing-imports'
+let g:ale_go_gometalinter_options = '
+   \ --aggregate
+   \ --disable=gas
+   \ --disable=gotype
+   \ --enable=test
+   \ --enable=golint
+   \ --enable=errcheck
+   \ --enable=vet
+   \ --enable=goimports
+   \ --sort=line
+   \ --fast
+   \ --tests
+   \ --vendor
+   \ '
 
 "
 " black
@@ -191,11 +206,6 @@ let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
-
-let g:go_metalinter_enabled = ['vet', 'golint', 'errcheck']
-let g:go_metalinter_autosave_enabled = ['vet', 'golint']
-let g:go_metalinter_autosave = 1
-
 let g:go_auto_type_info = 1
 " let g:go_auto_sameids = 1
 
