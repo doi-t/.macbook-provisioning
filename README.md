@@ -12,9 +12,19 @@ brew cask install google-chrome
 # generate ssh key for github: https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 ssh -T git@github.com
 git clone git@github.com:doi-t/.macbook-provisioning.git
+git config user.email 'email address'
+cd .macbook-provisioning
+make init
 ```
 
-### Install packages and propagate configurations
+### Remaining manual works...
 ```
-make provision
+# iTerm2 --> Preference --> Profile --> Colors --> Color Presets... --> Solarized Dark
+# System Preferences -->  Keyboard --> Modifier Keys... --> Change 'Caps Lock' to 'Control'
+# System Preferences -->  Keyboard --> Input Sources --> Choose 'U.S.' and 'Japanese' & Disable Katakana and Romaji
+```
+
+### Update packages and configurations
+```
+make update
 ```
