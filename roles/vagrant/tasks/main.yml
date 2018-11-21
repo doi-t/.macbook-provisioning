@@ -1,10 +1,10 @@
 ---
-- name: List Installed Vagrant Plugins
+- name: list installed Vagrant plugins
   shell: "vagrant plugin list | awk '{ print $1 }'"
   changed_when: false
   register: vagrant_plugin_list
 
-- name: Install Vagrant Plugins
+- name: install Vagrant plugins
   shell: "vagrant plugin install {{item}}"
   loop:
     - sahara
