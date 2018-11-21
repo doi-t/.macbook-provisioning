@@ -171,7 +171,6 @@ map P <Plug>(miniyank-autoPut)
 " See ':help go-settings'
 " See ':help go-commands'
 "
-" NOTE: Run 'gometalinter --install' on your terminal if you have not run them yet.
 " NOTE: Run ':GoUpdateBinaries' if you got an error on ':GoDef' or ':GoDoc'
 "
 " NOTES:

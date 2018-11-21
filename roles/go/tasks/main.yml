@@ -15,6 +15,3 @@
       - go
       - dep
       - gometalinter
-
-- name: install go linter
-  shell: gometalinter --install
