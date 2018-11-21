@@ -6,7 +6,7 @@
 
 - name: Install Vagrant Plugins
   shell: "vagrant plugin install {{item}}"
-  with_items:
+  loop:
     - sahara
     - vagrant-cachier
     - vagrant-exec
@@ -14,5 +14,4 @@
     - vagrant-vbguest
     - vagrant-omnibus
     - vagrant-rsync-back
-
   when: item not in vagrant_plugin_list.stdout_lines
