@@ -40,11 +40,6 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 [[ -s $HOME/.pythonz/etc/bashrc ]] && source $HOME/.pythonz/etc/bashrc
 
 #
-# aws
-#
-source /usr/local/bin/aws_zsh_completer.sh
-
-#
 # go
 #
 export GOPATH=${HOME}/go
@@ -64,7 +59,7 @@ if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
 
-source /usr/local/bin/kube-ps1.sh
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 PROMPT=$'%{$purple%}%n${PR_RST} in %{$limegreen%}%~${PR_RST} $vcs_info_msg_0_$(virtualenv_info)$(kube_ps1) at %{$orange%}%D{%F %T}${PR_RST}
 $ '
 
