@@ -2,8 +2,6 @@
 - hosts: all
   roles:
     - role: taps
-    - role: utils
-    - role: cask
     - role: terminal
     - role: vim
     - role: go
@@ -11,3 +9,5 @@
     - role: rust
     - role: vagrant
     - role: gcp
+    - role: utils
+    - role: cask
