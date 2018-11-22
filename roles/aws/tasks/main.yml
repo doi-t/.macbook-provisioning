@@ -1,0 +1,3 @@
+---
+- name: set up aws config
+  shell: mkdir -p $HOME/.aws && cp ./dotfiles/aws/config $HOME/.aws/config
