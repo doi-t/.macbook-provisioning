@@ -87,11 +87,6 @@ map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen=1 " Close NERDTree when open a node.
 
 "
-" terminal emulator
-"
-tnoremap <silent> <ESC> <C-\><C-n>
-
-"
 " vim-colors-solarized
 "
 syntax enable
