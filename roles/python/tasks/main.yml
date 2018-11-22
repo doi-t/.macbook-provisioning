@@ -1,5 +1,5 @@
 ---
-- name: Install pip packages
+- name: install pip packages
   pip:
     name: "{{packages}}"
     executable: pip3
@@ -7,3 +7,6 @@
     packages:
       - virtualenv
       - protobuf
+
+- name: setup .direnvrc
+  shell: cp ./dotfiles/.direnvrc $HOME/.direnvrc
