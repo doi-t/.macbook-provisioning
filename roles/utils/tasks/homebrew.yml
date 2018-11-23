@@ -69,3 +69,4 @@
       - protobuf
       - sops
       - telnet
+      - grafana
