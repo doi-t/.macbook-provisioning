@@ -1,2 +1,5 @@
 [all]
 localhost ansible_connection=local
+
+[all:vars]
+ansible_user='{{ user_name }}'

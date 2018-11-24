@@ -8,25 +8,21 @@
     packages:
       - zsh
 
-- name: check username
-  shell: whoami
-  register: zsh_user
-
 - name: check default shell
   shell: echo $SHELL
+  become_user: "{{ ansible_user }}"
   register: default_shell
 
-- name: make zsh installed with homebrew available
-  become: yes
-  lineinfile:
-    path: /etc/shells
-    line: '/usr/local/bin/zsh'
-  when: default_shell.stdout != '/usr/local/bin/zsh'
+- name: zsh path for macos
+  set_fact:
+    zsh_path: "/usr/local/bin/zsh"
 
-- name: set up default shell as zsh
-  become_method: su
-  become_user: "{{zsh_user}}"
-  shell: chsh -s $(which zsh)
+- name: User should use zsh
+  user:
+    name: "{{ ansible_user }}"
+    state: present
+    shell: "{{ zsh_path }}"
+  become: yes
   when: default_shell.stdout != '/usr/local/bin/zsh'
 
 - name: setup tab completion
