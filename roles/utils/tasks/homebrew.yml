@@ -71,3 +71,5 @@
       - telnet
       - grafana
       - graphviz
+      - socat
+      - datawire/blackbird/telepresence

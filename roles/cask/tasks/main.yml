@@ -1,4 +1,6 @@
-- homebrew_cask:
+---
+- name: install packages via brew cask
+  homebrew_cask:
     name: "{{packages}}"
     state: present
   when: ansible_os_family == "Darwin"
@@ -26,3 +28,4 @@
       - bitbar
       - authy
       - aerial
+      - osxfuse
