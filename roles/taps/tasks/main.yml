@@ -7,3 +7,4 @@
       - caskroom/versions
       - sanemat/font
       - mackerelio/mackerel-agent
+      - wata727/tflint
