@@ -72,5 +72,6 @@
       - grafana
       - graphviz
       - socat
+      - exercism
       - datawire/blackbird/telepresence
       - tflint
