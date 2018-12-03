@@ -75,3 +75,4 @@
       - exercism
       - datawire/blackbird/telepresence
       - tflint
+      - go-task/tap/go-task
