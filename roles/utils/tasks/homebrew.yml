@@ -31,6 +31,7 @@
       - watch
       - lv
       - bat
+      - hexyl
       - jq
       - nkf
       - htop
