@@ -15,6 +15,7 @@
       - mypy
       - yamllint
       - black
+      - flake8
 
 - name: install neovim pip packages with pip2 as well
   pip:
@@ -24,3 +25,7 @@
 
 - name: Update .config/nvim/init.vim
   shell: cp dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
+
+# Ref. https://github.com/ambv/black/blob/master/.flake8
+- name: set up flake8 config
+  shell: cp ./dotfiles/.flake8 $HOME/.flake8

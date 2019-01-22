@@ -122,7 +122,7 @@ let g:ale_lint_on_enter = 1
 let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 let g:ale_linters = {
-\   'python': ['mypy'],
+\   'python': ['mypy', 'flake8'],
 \   'yaml': ['yamllint'],
 \   'vim': ['vint'],
 \   'go': ['gometalinter', 'go build']
