@@ -1,0 +1,6 @@
+---
+- name: download protoc-gen-grpc-web plugin
+  get_url:
+    url: https://github.com/grpc/grpc-web/releases/download/1.0.3/protoc-gen-grpc-web-1.0.3-darwin-x86_64
+    dest: /usr/local/bin/protoc-gen-grpc-web
+    mode: 0755
