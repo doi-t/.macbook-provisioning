@@ -20,6 +20,7 @@
       - openssl
       - pkg-config
       - coreutils
+      - moreutils
       - libxml2
       - libxslt
       - libiconv
