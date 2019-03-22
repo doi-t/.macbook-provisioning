@@ -61,6 +61,7 @@
       - nomad
       - kustomize
       - stern
+      - txn2/tap/kubefwd
       - kubectx
       - kube-ps1
       - kubernetes-helm
