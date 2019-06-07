@@ -81,3 +81,4 @@
       - go-task/tap/go-task
       - gettext
       - prometheus
+      - jsonnet
