@@ -82,3 +82,4 @@
       - gettext
       - prometheus
       - jsonnet
+      - pipenv
