@@ -41,6 +41,7 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('AndrewRadev/splitjoin.vim')
   call dein#add('SirVer/ultisnips')
   call dein#add('ambv/black')
+  call dein#add('google/vim-jsonnet')
 
   if dein#check_install()
     call dein#install()
