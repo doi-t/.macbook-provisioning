@@ -3,7 +3,6 @@
   roles:
     - role: taps
     - role: utils
-    - role: cask
     - role: terminal
     - role: vim
     - role: go
@@ -12,3 +11,4 @@
     - role: vagrant
     - role: gcp
     - role: aws
+    - role: cask

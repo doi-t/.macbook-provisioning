@@ -42,6 +42,7 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('SirVer/ultisnips')
   call dein#add('ambv/black')
   call dein#add('google/vim-jsonnet')
+  call dein#add('terryma/vim-multiple-cursors')
 
   if dein#check_install()
     call dein#install()
