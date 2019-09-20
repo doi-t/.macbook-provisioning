@@ -48,7 +48,6 @@
       - w3m
       - lua
       - python
-      - python@2
       - ansible
       - node
       - yarn
