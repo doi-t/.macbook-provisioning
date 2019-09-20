@@ -83,3 +83,4 @@
       - prometheus
       - jsonnet
       - pipenv
+      - openapi-generator
