@@ -127,8 +127,11 @@ let g:ale_linters = {
 \   'python': ['mypy', 'flake8'],
 \   'yaml': ['yamllint'],
 \   'vim': ['vint'],
-\   'go': ['gometalinter', 'go build']
+\   'go': ['gometalinter', 'go build'],
+\   'terraform': ['terraform']
 \}
+" NOTE: Disable 'tflint' until it gets fixed. Ref.https://github.com/dense-analysis/ale/pull/2775
+
 let g:ale_fixers = {
 \ 'python':     ['remove_trailing_lines', 'trim_whitespace'],
 \ 'bash':       ['remove_trailing_lines', 'trim_whitespace'],
