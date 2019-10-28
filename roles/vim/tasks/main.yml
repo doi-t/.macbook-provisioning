@@ -4,14 +4,14 @@
   args:
     creates: $HOME/.config/nvim/dein
 
-- name: install neovim replated pip packages
+- name: install pynvim replated pip packages
   pip:
     executable: "/usr/local/bin/pip3"
     name: "{{packages}}"
     extra_args: --user
   vars:
     packages:
-      - neovim
+      - pynvim
       - mypy
       - yamllint
       - black
