@@ -83,3 +83,4 @@
       - jsonnet
       - pipenv
       - openapi-generator
+      - github/gh/gh
