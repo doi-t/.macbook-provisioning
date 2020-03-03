@@ -2,16 +2,20 @@
 " dein
 "
 if &compatible
-  set nocompatible
+  set nocompatible               " Be iMproved
 endif
-set runtimepath+=~/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('~/.config/nvim/dein/plugins')
-  let g:dein#install_process_timeout =  600
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-  call dein#begin('~/.config/nvim/dein/plugins')
-  call dein#add('~/.config/nvim/dein/repos/github.com/Shougo/dein.vim')
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
 
+  " Let dein manage dein
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here like this:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/deoplete.nvim')
   " call dein#add('prabirshrestha/asyncomplete.vim')
   " call dein#add('prabirshrestha/async.vim')
@@ -44,15 +48,16 @@ if dein#load_state('~/.config/nvim/dein/plugins')
   call dein#add('google/vim-jsonnet')
   call dein#add('terryma/vim-multiple-cursors')
 
-  if dein#check_install()
-    call dein#install()
-  endif
-
   call dein#end()
   call dein#save_state()
 endif
 
 filetype plugin indent on
+syntax enable
+
+if dein#check_install()
+  call dein#install()
+endif
 
 "
 " global

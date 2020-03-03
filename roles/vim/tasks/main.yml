@@ -16,6 +16,7 @@
       - yamllint
       - black
       - flake8
+      - msgpack
 
 - name: Update .config/nvim/init.vim
   shell: cp dotfiles/nvim/init.vim $HOME/.config/nvim/init.vim
