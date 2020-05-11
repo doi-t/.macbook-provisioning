@@ -68,6 +68,12 @@ PROMPT=$'%{$purple%}%n${PR_RST} in %{$limegreen%}%~${PR_RST} $vcs_info_msg_0_$(v
 $ '
 
 #
+# gh
+#
+export PATH="$HOME/.githubcli/bin:$PATH"
+eval "$(gh completion -s zsh)"
+
+#
 # stern
 #
 source <(stern --completion=zsh)
