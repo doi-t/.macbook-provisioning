@@ -85,3 +85,4 @@
       - openapi-generator
       - github/gh/gh
       - git-delta
+      - libpq
