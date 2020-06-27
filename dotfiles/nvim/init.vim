@@ -148,6 +148,7 @@ let g:ale_fixers = {
 \ 'ruby':       ['remove_trailing_lines', 'trim_whitespace'],
 \ 'yaml':       ['remove_trailing_lines', 'trim_whitespace'],
 \ 'vim':        ['remove_trailing_lines', 'trim_whitespace'],
+\ 'sql':        ['remove_trailing_lines', 'trim_whitespace'],
 \}
 let g:ale_python_mypy_options = '--ignore-missing-imports'
 let g:ale_go_gometalinter_options = '
