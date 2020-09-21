@@ -244,7 +244,7 @@ autocmd Filetype go command! -bang AT call go#alternate#Switch(<bang>0, 'tabe')
 "
 let g:deoplete#enable_at_startup = 1
 " Path to python interpreter for neovim
-let g:python3_host_prog  = '/usr/local/bin/python3'
+let g:python3_host_prog  = '/usr/local/opt/python/libexec/bin/python'
 " Skip the check of neovim module
 let g:python3_host_skip_check = 1
 " neocomplete like
