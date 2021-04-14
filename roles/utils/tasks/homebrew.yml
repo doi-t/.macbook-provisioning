@@ -87,3 +87,4 @@
       - git-delta
       - libpq
       - golang-migrate
+      - aws-sam-cli
