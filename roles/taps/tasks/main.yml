@@ -8,3 +8,4 @@
       - mackerelio/mackerel-agent
       - wata727/tflint
       - aws/tap
+      - sachaos/todoist

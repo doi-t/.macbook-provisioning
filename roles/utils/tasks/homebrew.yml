@@ -88,3 +88,4 @@
       - libpq
       - golang-migrate
       - aws-sam-cli
+      - todoist
