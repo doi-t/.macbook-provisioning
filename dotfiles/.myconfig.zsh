@@ -46,8 +46,8 @@ export LDFLAGS="-L/usr/local/opt/openssl/lib"
 #
 # go
 #
-export GOPATH=${HOME}/go
-export PATH=$PATH:$(go env GOPATH)/bin
+export GOBIN=${HOME}/go/bin
+export PATH=$PATH:$(go env GOBIN)
 
 #
 # rust
