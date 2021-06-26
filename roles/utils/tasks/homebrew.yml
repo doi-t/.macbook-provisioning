@@ -89,3 +89,4 @@
       - golang-migrate
       - aws-sam-cli
       - todoist
+      - act
