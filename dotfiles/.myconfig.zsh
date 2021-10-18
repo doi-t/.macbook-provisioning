@@ -5,6 +5,9 @@ export LANG=en_US.UTF-8
 # oh-my-zsh
 unsetopt auto_cd
 
+# curl
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
 # alias
 alias vi=nvim
 alias vim=nvim
